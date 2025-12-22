@@ -1,0 +1,22 @@
+{
+  "mcpServers": {
+    "context7": {
+      "httpUrl": "https://mcp.context7.com/mcp",
+      "headers": {
+        "CONTEXT7_API_KEY": "ctx7sk-a7181688-289e-46f6-9ada-876dbc0e5a83",
+        "Accept": "application/json, text/event-stream"
+      }
+    },
+    "TestSprite": {
+        "command": "npx",
+        "args": [
+          "@testsprite/testsprite-mcp@latest"
+        ],
+        "env": {
+          "API_KEY": "sk-user-3o6i3ZNBNE9zcs2UeyCRk1Y6hU9ddf2YfCVepFVtVruMAp0zoVnZwQyitKL8zTYceUvoMicq1y5up7tLek6aJVKhkv-7AO3pSRh38CG3s_O5-pA2igmGv52GB6awVSOgRDo"
+        }
+      }
+
+  },
+  "$version": 2
+}

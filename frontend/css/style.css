@@ -1,0 +1,112 @@
+/* PolicyLens India - Main Styles */
+:root {
+  --primary-color: #0d6efd;
+  --secondary-color: #6c757d;
+  --success-color: #198754;
+  --light-bg: #f8f9fa;
+  --dark-text: #212529;
+  --border-color: #dee2e6;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--dark-text);
+  background-color: #ffffff;
+}
+
+.navbar-brand {
+  font-weight: bold;
+}
+
+.policy-card {
+  transition: transform 0.2s, box-shadow 0.2s;
+  height: 100%;
+}
+
+.policy-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.policy-category {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  background-color: #e7f1ff;
+  color: var(--primary-color);
+}
+
+.policy-status {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.eligible-badge {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.not-eligible-badge {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.conditionally-eligible-badge {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.pros-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.pros-list li {
+  padding: 0.25rem 0;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.pros-list li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--success-color);
+  font-weight: bold;
+}
+
+.cons-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.cons-list li {
+  padding: 0.25rem 0;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.cons-list li:before {
+  content: "✗";
+  position: absolute;
+  left: 0;
+  color: #dc3545;
+  font-weight: bold;
+}
+
+footer {
+  margin-top: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .policy-card {
+    margin-bottom: 1rem;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+  }
+}

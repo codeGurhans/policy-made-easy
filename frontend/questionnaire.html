@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Eligibility - PolicyLens India</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="/">PolicyLens India</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/policies">Explore Policies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/questionnaire">Check Eligibility</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <h1 class="mb-4">Check Eligibility for Government Schemes</h1>
+                <p class="lead mb-4">Answer a few questions to see which policies and schemes you qualify for.</p>
+                
+                <form id="eligibilityForm">
+                    <div class="mb-4">
+                        <label for="ageRange" class="form-label">Age Range</label>
+                        <select class="form-select" id="ageRange" required>
+                            <option value="">Select your age range</option>
+                            <option value="18-25">18-25</option>
+                            <option value="26-35">26-35</option>
+                            <option value="36-45">36-45</option>
+                            <option value="46-55">46-55</option>
+                            <option value="56-65">56-65</option>
+                            <option value="above-65">Above 65</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="occupation" class="form-label">Occupation</label>
+                        <select class="form-select" id="occupation" required>
+                            <option value="">Select your occupation</option>
+                            <option value="student">Student</option>
+                            <option value="salaried">Salaried Employee</option>
+                            <option value="self-employed">Self-Employed</option>
+                            <option value="unemployed">Unemployed</option>
+                            <option value="retired">Retired</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="incomeRange" class="form-label">Annual Income Range</label>
+                        <select class="form-select" id="incomeRange" required>
+                            <option value="">Select your income range</option>
+                            <option value="below-2-lakh">Below ₹2 lakh</option>
+                            <option value="2-5-lakh">₹2 lakh - ₹5 lakh</option>
+                            <option value="5-10-lakh">₹5 lakh - ₹10 lakh</option>
+                            <option value="above-10-lakh">Above ₹10 lakh</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="studentStatus" class="form-label">Are you currently a student?</label>
+                        <select class="form-select" id="studentStatus" required>
+                            <option value="">Select option</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="state" class="form-label">State of Residence</label>
+                        <select class="form-select" id="state" required>
+                            <option value="">Select your state</option>
+                            <option value="andhra-pradesh">Andhra Pradesh</option>
+                            <option value="arunachal-pradesh">Arunachal Pradesh</option>
+                            <option value="assam">Assam</option>
+                            <option value="bihar">Bihar</option>
+                            <option value="chhattisgarh">Chhattisgarh</option>
+                            <option value="goa">Goa</option>
+                            <option value="gujarat">Gujarat</option>
+                            <option value="haryana">Haryana</option>
+                            <option value="himachal-pradesh">Himachal Pradesh</option>
+                            <option value="jharkhand">Jharkhand</option>
+                            <option value="karnataka">Karnataka</option>
+                            <option value="kerala">Kerala</option>
+                            <option value="madhya-pradesh">Madhya Pradesh</option>
+                            <option value="maharashtra">Maharashtra</option>
+                            <option value="manipur">Manipur</option>
+                            <option value="meghalaya">Meghalaya</option>
+                            <option value="mizoram">Mizoram</option>
+                            <option value="nagaland">Nagaland</option>
+                            <option value="odisha">Odisha</option>
+                            <option value="punjab">Punjab</option>
+                            <option value="rajasthan">Rajasthan</option>
+                            <option value="sikkim">Sikkim</option>
+                            <option value="tamil-nadu">Tamil Nadu</option>
+                            <option value="telangana">Telangana</option>
+                            <option value="tripura">Tripura</option>
+                            <option value="uttar-pradesh">Uttar Pradesh</option>
+                            <option value="uttarakhand">Uttarakhand</option>
+                            <option value="west-bengal">West Bengal</option>
+                            <option value="andaman-nicobar">Andaman and Nicobar Islands</option>
+                            <option value="chandigarh">Chandigarh</option>
+                            <option value="dadra-nagar-haveli">Dadra and Nagar Haveli</option>
+                            <option value="daman-diu">Daman and Diu</option>
+                            <option value="delhi">Delhi</option>
+                            <option value="lakshadweep">Lakshadweep</option>
+                            <option value="puducherry">Puducherry</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="familyIncome" class="form-label">Family's Annual Income Range (Optional)</label>
+                        <select class="form-select" id="familyIncome">
+                            <option value="">Select if different from personal income</option>
+                            <option value="below-2-lakh">Below ₹2 lakh</option>
+                            <option value="2-5-lakh">₹2 lakh - ₹5 lakh</option>
+                            <option value="5-10-lakh">₹5 lakh - ₹10 lakh</option>
+                            <option value="above-10-lakh">Above ₹10 lakh</option>
+                        </select>
+                    </div>
+                    
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary btn-lg">Check Eligibility</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2025 PolicyLens India. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="/about" class="text-decoration-none">About</a> | 
+                    <a href="#" class="text-decoration-none">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/questionnaire.js"></script>
+</body>
+</html>
