@@ -1,112 +1,553 @@
-/* PolicyLens India - Main Styles */
+/* ================================
+   PolicyLens India – Premium UI
+   ================================ */
+
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Root Variables */
 :root {
-  --primary-color: #0d6efd;
-  --secondary-color: #6c757d;
-  --success-color: #198754;
-  --light-bg: #f8f9fa;
-  --dark-text: #212529;
-  --border-color: #dee2e6;
+  --primary: #2563eb;
+  --primary-dark: #1e40af;
+  --secondary: #64748b;
+  --success: #16a34a;
+  --danger: #dc2626;
+  --warning: #f59e0b;
+
+  --bg-light: #f8fafc;
+  --bg-white: #ffffff;
+  --bg-glass: rgba(255, 255, 255, 0.75);
+
+  --text-dark: #0f172a;
+  --text-muted: #64748b;
+
+  --radius: 16px;
+  --radius-sm: 10px;
+
+  --shadow-sm: 0 8px 24px rgba(15, 23, 42, 0.08);
+  --shadow-md: 0 16px 40px rgba(15, 23, 42, 0.12);
+  --shadow-lg: 0 30px 80px rgba(15, 23, 42, 0.18);
 }
 
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: var(--dark-text);
-  background-color: #ffffff;
-}
-
-.navbar-brand {
-  font-weight: bold;
-}
-
-.policy-card {
-  transition: transform 0.2s, box-shadow 0.2s;
+html, body {
   height: 100%;
 }
 
-.policy-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+/* Global Reset */
+* {
+  scroll-behavior: smooth;
 }
 
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: linear-gradient(180deg, #f8fafc, #ffffff);
+  color: var(--text-dark);
+  line-height: 1.65;
+}
+
+/* ================================
+   NAVBAR – PREMIUM LOOK
+   ================================ */
+.navbar {
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #1e40af,
+    #0f172a
+  );
+  background-size: 300% 300%;
+  animation: navbarGlow 8s ease infinite;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  padding: 0.9rem 0;
+}
+
+@keyframes navbarGlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.navbar-brand {
+  font-size: 1.4rem;
+  font-weight: 900;
+  letter-spacing: 0.6px;
+  color: #fff !important;
+}
+
+.nav-link {
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85) !important;
+  margin-left: 1rem;
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #38bdf8, #22d3ee);
+  transition: width 0.35s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+
+/* ================================
+   CARDS — ELITE SURFACE
+   ================================ */
+.card {
+  position: relative;
+  border-radius: 20px;
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.96),
+    rgba(248,250,252,0.9)
+  );
+  border: 1px solid rgba(15,23,42,0.05);
+  box-shadow:
+    0 12px 28px rgba(15,23,42,0.08),
+    0 2px 6px rgba(15,23,42,0.04);
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+/* Subtle top accent line (premium cue) */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(37,99,235,0.6),
+    transparent
+  );
+  opacity: 0.7;
+}
+
+/* Hover = confident lift, not flashy */
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 28px 70px rgba(15,23,42,0.14),
+    0 0 35px rgba(56,189,248,0.14);
+}
+
+/* Header — refined authority */
+.card-header {
+  background: transparent;
+  border-bottom: 1px solid rgba(148,163,184,0.18);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.25px;
+  padding-bottom: 0.75rem;
+}
+
+/* Policy card layout */
+.policy-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Category pill — calmer, premium */
 .policy-category {
-  display: inline-block;
-  padding: 0.25rem 0.75rem;
-  font-size: 0.75rem;
-  font-weight: 500;
-  border-radius: 0.5rem;
-  background-color: #e7f1ff;
-  color: var(--primary-color);
+  display: inline-flex;
+  align-items: center;
+  padding: 0.32rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.35px;
+  color: var(--primary);
+  background: rgba(37,99,235,0.12);
+  box-shadow:
+    inset 0 0 0 1px rgba(37,99,235,0.18),
+    0 6px 18px rgba(37,99,235,0.18);
 }
 
-.policy-status {
-  font-size: 0.85rem;
-  font-weight: 500;
-}
-
+/* ================================
+   BADGES
+   ================================ */
 .eligible-badge {
-  background-color: #d4edda;
-  color: #155724;
+  background: rgba(22, 163, 74, 0.15);
+  color: var(--success);
+  border-radius: 999px;
 }
 
 .not-eligible-badge {
-  background-color: #f8d7da;
-  color: #721c24;
+  background: rgba(220, 38, 38, 0.15);
+  color: var(--danger);
+  border-radius: 999px;
 }
 
 .conditionally-eligible-badge {
-  background-color: #fff3cd;
-  color: #856404;
+  background: rgba(245, 158, 11, 0.2);
+  color: var(--warning);
+  border-radius: 999px;
 }
 
-.pros-list {
-  list-style-type: none;
-  padding-left: 0;
+/* ================================
+   BUTTONS
+   ================================ */
+.btn {
+  border-radius: 999px;
+  font-weight: 600;
+  padding: 0.65rem 1.6rem;
+  transition: all 0.3s ease;
 }
 
-.pros-list li {
-  padding: 0.25rem 0;
-  position: relative;
-  padding-left: 1.5rem;
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  border: none;
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.4);
 }
 
-.pros-list li:before {
-  content: "✓";
-  position: absolute;
-  left: 0;
-  color: var(--success-color);
-  font-weight: bold;
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 45px rgba(37, 99, 235, 0.55);
 }
 
+.btn-outline-primary {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+}
+
+.btn-outline-primary:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* ================================
+   FORMS
+   ================================ */
+.form-control,
+.form-select {
+  border-radius: var(--radius-sm);
+  padding: 0.65rem 0.9rem;
+  border: 1px solid #e2e8f0;
+  box-shadow: none;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+}
+
+/* ================================
+   LISTS (PROS / CONS)
+   ================================ */
+.pros-list,
 .cons-list {
-  list-style-type: none;
+  list-style: none;
   padding-left: 0;
 }
 
+.pros-list li,
 .cons-list li {
-  padding: 0.25rem 0;
   position: relative;
-  padding-left: 1.5rem;
+  padding-left: 1.8rem;
+  margin-bottom: 0.4rem;
 }
 
-.cons-list li:before {
-  content: "✗";
+.pros-list li::before {
+  content: "✔";
   position: absolute;
   left: 0;
-  color: #dc3545;
-  font-weight: bold;
+  color: var(--success);
+  font-weight: 700;
 }
 
+.cons-list li::before {
+  content: "✖";
+  position: absolute;
+  left: 0;
+  color: var(--danger);
+  font-weight: 700;
+}
+
+/* ================================
+   BREADCRUMB
+   ================================ */
+.breadcrumb {
+  background: transparent;
+  font-weight: 500;
+}
+
+.breadcrumb a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+/* ================================
+   FOOTER
+   ================================ */
 footer {
+  background: linear-gradient(135deg, #0f172a, #020617);
+  color: #cbd5f5;
+  width: 100%;
   margin-top: auto;
 }
 
-/* Responsive adjustments */
+footer a {
+  color: #93c5fd;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* ================================
+   SPINNER
+   ================================ */
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+  color: var(--primary);
+}
+
+/* ================================
+   404 PAGE
+   ================================ */
+.display-1 {
+  font-size: 6rem;
+}
+
+/* ================================
+   RESPONSIVE
+   ================================ */
 @media (max-width: 768px) {
-  .policy-card {
-    margin-bottom: 1rem;
-  }
-  
   h1 {
-    font-size: 1.8rem;
+    font-size: 1.9rem;
+  }
+
+  .display-4 {
+    font-size: 2.2rem;
+  }
+
+  .card {
+    margin-bottom: 1.5rem;
   }
 }
+
+body {
+  min-height: 100vh !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.container {
+  flex: 1 0 auto !important;
+}
+
+footer {
+  margin-top: auto !important;
+  flex-shrink: 0 !important;
+}
+
+/* ================================
+   ELITE FINISH — SOFT GLOW EDITION
+   ================================ */
+
+/* Ambient background glow (luxury, not flashy) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(900px 500px at 15% -10%, rgba(37,99,235,0.10), transparent 45%),
+    radial-gradient(700px 400px at 85% 10%, rgba(56,189,248,0.08), transparent 45%),
+    radial-gradient(600px 300px at 50% 90%, rgba(99,102,241,0.06), transparent 50%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Hero headline – elegant glow */
+.display-4 {
+  font-weight: 300;
+  letter-spacing: -0.7px;
+  line-height: 1.12;
+  text-shadow:
+    0 10px 40px rgba(37,99,235,0.15),
+    0 2px 6px rgba(15,23,42,0.08);
+}
+
+/* Calm supporting text */
+p.lead {
+  color: #475569;
+  font-weight: 400;
+  text-shadow: 0 2px 8px rgba(15,23,42,0.05);
+}
+
+/* Buttons – soft glow on hover */
+.btn-primary {
+  box-shadow:
+    0 10px 30px rgba(37,99,235,0.35),
+    inset 0 0 0 rgba(255,255,255,0);
+}
+
+.btn-primary:hover {
+  box-shadow:
+    0 18px 55px rgba(37,99,235,0.55),
+    0 0 25px rgba(56,189,248,0.35);
+}
+
+/* Outline button glow */
+.btn-outline-primary:hover {
+  box-shadow:
+    0 0 25px rgba(37,99,235,0.35);
+}
+
+/* Cards – premium surface glow */
+.card {
+  border: 1px solid rgba(15,23,42,0.06);
+  box-shadow:
+    0 20px 50px rgba(15,23,42,0.10),
+    inset 0 0 0 rgba(255,255,255,0);
+}
+
+.card:hover {
+  box-shadow:
+    0 30px 80px rgba(15,23,42,0.18),
+    0 0 30px rgba(37,99,235,0.18);
+}
+
+/* Number badges – elite glow */
+.badge.rounded-pill {
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  box-shadow:
+    0 10px 30px rgba(37,99,235,0.45),
+    0 0 20px rgba(56,189,248,0.35);
+}
+
+/* Navbar – subtle glow line */
+.navbar {
+  box-shadow:
+    0 20px 60px rgba(2,6,23,0.45),
+    inset 0 -1px 0 rgba(255,255,255,0.08);
+}
+
+/* Footer glow divider */
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 65%;
+  height: 1px;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(148,163,184,0.5),
+    transparent
+  );
+}
+
+/* Dark mode – rich glow (not neon) */
+body.dark-mode::before {
+  background:
+    radial-gradient(900px 500px at 15% -10%, rgba(56,189,248,0.12), transparent 45%),
+    radial-gradient(700px 400px at 85% 10%, rgba(99,102,241,0.10), transparent 45%),
+    radial-gradient(600px 300px at 50% 90%, rgba(37,99,235,0.08), transparent 50%);
+}
+
+body.dark-mode .card {
+  box-shadow:
+    0 25px 90px rgba(0,0,0,0.85),
+    0 0 30px rgba(56,189,248,0.20);
+}
+
+/* Reduce glow on mobile (cleaner look) */
+@media (max-width: 768px) {
+  body::before {
+    opacity: 0.6;
+  }
+}
+
+/* ================================
+   CHECK ELIGIBILITY – ELITE FORM
+   ================================ */
+
+/* Form wrapper polish */
+#eligibilityForm {
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.85),
+    rgba(248,250,252,0.9)
+  );
+  border-radius: 20px;
+  padding: 2.5rem 2.75rem;
+  box-shadow:
+    0 30px 80px rgba(15,23,42,0.12),
+    0 0 40px rgba(37,99,235,0.12);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(15,23,42,0.06);
+}
+
+/* Form labels – calm authority */
+#eligibilityForm .form-label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.3px;
+  color: #334155;
+  margin-bottom: 0.4rem;
+}
+
+/* Inputs & selects – premium surface */
+#eligibilityForm .form-control,
+#eligibilityForm .form-select {
+  border-radius: 14px;
+  padding: 0.85rem 1rem;
+  font-size: 0.95rem;
+  background: rgba(255,255,255,0.85);
+  border: 1px solid rgba(148,163,184,0.35);
+  transition: all 0.25s ease;
+}
+
+/* Focus glow */
+#eligibilityForm .form-control:focus,
+#eligibilityForm .form-select:focus {
+  border-color: #2563eb;
+  box-shadow:
+    0 0 0 4px rgba(37,99,235,0.18),
+    0 10px 25px rgba(37,99,235,0.18);
+  background: #fff;
+}
+
+/* Spacing rhythm */
+#eligibilityForm .mb-4 {
+  margin-bottom: 1.8rem !important;
+}
+
+/* Submit button – strong CTA */
+#eligibilityForm .btn-primary {
+  padding: 0.9rem 1.8rem;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  box-shadow:
+    0 18px 45px rgba(37,99,235,0.45),
+    0 0 25px rgba(56,189,248,0.35);
+}
+
+/* Button hover – confident */
+#eligibilityForm .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 28px
+
+
